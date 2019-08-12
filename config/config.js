@@ -88,6 +88,11 @@ export default {
       authority: ['admin', 'user'],
       routes: [
         {
+          name: 'data_statistics_1',
+          path: '/data_statistics_1',
+          component: './data_statistics_1',
+        },
+        {
           path: '/',
           name: 'welcome',
           icon: 'smile',

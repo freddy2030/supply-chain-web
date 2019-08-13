@@ -19,7 +19,7 @@ const ProportionSales = ({
   dropdownGroup: React.ReactNode;
   salesType: 'all' | 'online' | 'stores';
   salesPieData: VisitDataType[];
-  handleChangeSalesType?: (e: RadioChangeEvent) => void;
+  // handleChangeSalesType?: (e: RadioChangeEvent) => void;
 }) => (
   <Card
     loading={loading}
@@ -34,24 +34,24 @@ const ProportionSales = ({
     style={{
       height: '100%',
     }}
-    extra={
-      <div className={styles.salesCardExtra}>
-        {dropdownGroup}
-        <div className={styles.salesTypeRadio}>
-          <Radio.Group value={salesType} onChange={handleChangeSalesType}>
-            <Radio.Button value="all">
-              <FormattedMessage id="data_statistics.channel.all" defaultMessage="ALL" />
-            </Radio.Button>
-            <Radio.Button value="online">
-              <FormattedMessage id="data_statistics.channel.online" defaultMessage="Online" />
-            </Radio.Button>
-            <Radio.Button value="stores">
-              <FormattedMessage id="data_statistics.channel.stores" defaultMessage="Stores" />
-            </Radio.Button>
-          </Radio.Group>
-        </div>
-      </div>
-    }
+    // extra={
+    //   <div className={styles.salesCardExtra}>
+    //     {dropdownGroup}
+    //     <div className={styles.salesTypeRadio}>
+    //       <Radio.Group value={salesType} onChange={handleChangeSalesType}>
+    //         <Radio.Button value="all">
+    //           <FormattedMessage id="data_statistics.channel.all" defaultMessage="ALL" />
+    //         </Radio.Button>
+    //         <Radio.Button value="online">
+    //           <FormattedMessage id="data_statistics.channel.online" defaultMessage="Online" />
+    //         </Radio.Button>
+    //         <Radio.Button value="stores">
+    //           <FormattedMessage id="data_statistics.channel.stores" defaultMessage="Stores" />
+    //         </Radio.Button>
+    //       </Radio.Group>
+    //     </div>
+    //   </div>
+    // }
   >
     <div>
       <h4 style={{ marginTop: 8, marginBottom: 32 }}>

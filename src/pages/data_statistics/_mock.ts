@@ -26,7 +26,7 @@ const salesData = [];
 for (let i = 0; i < 12; i += 1) {
   salesData.push({
     x: `${i + 1}月`,
-    y: Math.floor(Math.random() * 1000) + 200,
+    y: Math.floor(Math.random() * 100) + 200,
   });
 }
 const searchData = [];
@@ -41,28 +41,28 @@ for (let i = 0; i < 50; i += 1) {
 }
 const salesTypeData = [
   {
+    x: '金属',
+    y: 3233,
+  },
+  {
     x: '家用电器',
-    y: 4544,
+    y: 2919,
   },
   {
-    x: '食用酒水',
-    y: 3321,
+    x: '美容化妆',
+    y: 6996,
   },
   {
-    x: '个护健康',
-    y: 3113,
+    x: '服装',
+    y: 1411,
   },
   {
-    x: '服饰箱包',
-    y: 2341,
-  },
-  {
-    x: '母婴产品',
-    y: 1231,
+    x: '医用药品',
+    y: 10010,
   },
   {
     x: '其他',
-    y: 1231,
+    y: 3931,
   },
 ];
 

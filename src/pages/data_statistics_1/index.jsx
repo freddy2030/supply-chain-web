@@ -18,7 +18,7 @@ const OfflineData = React.lazy(() => import('./components/OfflineData'));
 }))
 class DataStatistics1 extends Component {
   state = {
-    salesType: 'all',
+    // salesType: 'all',
     currentTabKey: '',
     rangePickerValue: getTimeDistance('year'),
   };
@@ -51,9 +51,10 @@ class DataStatistics1 extends Component {
   }
 
   handleChangeSalesType = e => {
-    this.setState({
-      salesType: e.target.value,
-    });
+    // console.log("@54", e)
+    // this.setState({
+    //   salesType: e.target.value,
+    // });
   };
 
   handleTabChange = key => {
@@ -105,7 +106,7 @@ class DataStatistics1 extends Component {
     const { dataStatistics1, loading } = this.props;
     const {
       visitData,
-      visitData2,
+      // visitData2,
       salesData,
       searchData,
       offlineData,
@@ -116,16 +117,17 @@ class DataStatistics1 extends Component {
     } = dataStatistics1;
     let salesPieData;
 
-    if (salesType === 'all') {
-      salesPieData = salesTypeData;
-    } else {
-      salesPieData = salesType === 'online' ? salesTypeDataOnline : salesTypeDataOffline;
-    }
+    // if (salesType === 'all') {
+    salesPieData = salesTypeData;
+      // console.log("@121",salesTypeData)
+    // } else {
+      // salesPieData = salesType === 'online' ? salesTypeDataOnline : salesTypeDataOffline;
+    // }
 
     const menu = (
       <Menu>
-        <Menu.Item>操作一</Menu.Item>
-        <Menu.Item>操作二</Menu.Item>
+        <Menu.Item>分享</Menu.Item>
+        <Menu.Item>导出</Menu.Item>
       </Menu>
     );
     const dropdownGroup = (
@@ -174,7 +176,7 @@ class DataStatistics1 extends Component {
               <Suspense fallback={null}>
                 <ProportionSales
                   dropdownGroup={dropdownGroup}
-                  salesType={salesType}
+                  // salesType={salesType}
                   loading={loading}
                   salesPieData={salesPieData}
                   handleChangeSalesType={this.handleChangeSalesType}

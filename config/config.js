@@ -88,16 +88,36 @@ export default {
       authority: ['admin', 'user'],
       routes: [
         {
-          name: 'data_statistics_1',
+          name: '我的订单',
           path: '/data_statistics_1',
           component: './data_statistics_1',
+          icon: 'smile',
         },
         {
-          path: '/',
-          name: 'welcome',
-          icon: 'smile',
-          component: './Welcome',
+          name: '个人信息',
+          path: '/dashboard/workplace',
+          component: './dashboard/workplace',
         },
+        {
+          name: '个人中心',
+          path: '/account/center',
+          component: './account/center',
+        },
+        {
+          name: '全部订单',
+          path: '/list/card-list',
+          component: './list/card-list',
+        },
+        {
+          name: '新建订单',
+          path: '/step-form-1',
+          component: './step-form-1',
+        }, // {
+        //   path: '/',
+        //   name: 'welcome',
+        //   icon: 'smile',
+        //   component: './Welcome',
+        // },
         {
           component: './404',
         },

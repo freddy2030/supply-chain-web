@@ -1,5 +1,5 @@
 export default {
-  'data_statistics.analysis.test': '工专路 {no} 号店',
+  'data_statistics.analysis.test': '工专',
   'data_statistics.analysis.introduce': '指标说明',
   'data_statistics.analysis.total-sales': '总销售额',
   'data_statistics.analysis.day-sales': '日销售额',

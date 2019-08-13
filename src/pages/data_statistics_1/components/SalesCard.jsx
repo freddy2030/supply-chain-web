@@ -9,17 +9,19 @@ const { RangePicker } = DatePicker;
 const { TabPane } = Tabs;
 const rankingListData = [];
 
-for (let i = 0; i < 7; i += 1) {
+const storename = ['玛沃尔', '尚欧', '天天超市', '小明杂货铺', ''];
+
+for (let i = 0; i < 4; i += 1) {
   rankingListData.push({
     title: formatMessage(
       {
-        id: 'data_statistics_1.analysis.test',
+        id: storename[i],
       },
       {
         no: i,
       },
     ),
-    total: 323234,
+    total: 14992-i*623,
   });
 }
 

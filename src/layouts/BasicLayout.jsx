@@ -111,7 +111,7 @@ const BasicLayout = props => {
       {...props}
       {...settings}
     >
-      {children}
+      {/* {children} */}
     </ProLayout>
   );
 };

@@ -158,18 +158,16 @@ class Center extends PureComponent<
     const { currentUser, currentUserLoading } = this.props;
     const dataLoading = currentUserLoading || !(currentUser && Object.keys(currentUser).length);
     return (
-      <GridContent>
-        <Row gutter={24}>
-          <Col lg={100} md={20}>
+      
             <Card bordered={false} style={{ marginBottom: 24,alignContent: "center"}} loading={dataLoading}>
               {!dataLoading ? (
-                <div>
+                <div style={{flex:1,alignItems:"center"}}>
                   <div className={styles.avatarHolder}>
                     <img alt="" src={currentUser.avatar} />
                     <div className={styles.name}>{currentUser.name}</div>
                     <div>{currentUser.signature}</div>
                   </div>
-                  <div className={styles.detail}>
+                  <div className={styles.avatarHolder}>
                     <p>
                       <i className={styles.title} />
                       {currentUser.title}
@@ -185,7 +183,7 @@ class Center extends PureComponent<
                     </p>
                   </div>
                   <Divider dashed />
-                  <div className={styles.tags}>
+                  <div className={styles.avatarHolder} style={{alignContent:"center"}}>
                     <div className={styles.tagsTitle}>标签</div>
                     {currentUser.tags.concat(newTags).map(item => (
                       <Tag key={item.key}>{item.label}</Tag>
@@ -212,37 +210,11 @@ class Center extends PureComponent<
                     )}
                   </div>
                   <Divider style={{ marginTop: 16 }} dashed />
-                  <div className={styles.team}>
-                    <div className={styles.teamTitle}>团队</div>
-                    <Row gutter={36}>
-                      {currentUser.notice &&
-                        currentUser.notice.map(item => (
-                          <Col key={item.id} lg={24} xl={12}>
-                            <Link to={item.href}>
-                              <Avatar size="small" src={item.logo} />
-                              {item.member}
-                            </Link>
-                          </Col>
-                        ))}
-                    </Row>
-                  </div>
+                 
                 </div>
               ) : null}
             </Card>
-          </Col>
-          {/* <Col lg={17} md={24}>
-            <Card
-              className={styles.tabsCard}
-              bordered={false}
-              tabList={operationTabList}
-              activeTabKey={tabKey}
-              onTabChange={this.onTabChange}
-            >
-              {this.renderChildrenByTabKey(tabKey)}
-            </Card>
-          </Col> */}
-        </Row>
-      </GridContent>
+    
     );
   }
 }

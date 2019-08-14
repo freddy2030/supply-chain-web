@@ -54,7 +54,7 @@ class CardList extends Component<
       listCardList: { list },
       loading,
     } = this.props;
-
+    console.log("@577-----",loading,list)
     const content = (
       <div className={styles.pageHeaderContent}>
         <p>

@@ -40,10 +40,10 @@ const UserLayout = props => {
             <div className={styles.header}>
               <Link to="/">
                 <img alt="logo" className={styles.logo} src={logo} />
-                <span className={styles.title}>AAAAAAAAAAnt Design</span>
+                <span className={styles.title}></span>
               </Link>
             </div>
-            <div className={styles.desc}>AAAAAAAAAAAAAAAAAAAAAAAAAAnt Design 是西湖区最具影响力的 Web 设计规范</div>
+            <div className={styles.desc}></div>
           </div>
           {children}
         </div>

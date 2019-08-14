@@ -23,7 +23,7 @@ interface Step2Props extends FormComponentProps {
   submitting?: boolean;
 }
 
-const Step2: React.FC<Step2Props> = props => {
+const Step4: React.FC<Step2Props> = props => {
   const { form, data, dispatch, submitting } = props;
   if (!data) {
     return null;
@@ -41,7 +41,7 @@ const Step2: React.FC<Step2Props> = props => {
       // });
       dispatch({
         type: 'stepForm1/saveCurrentStep',
-        payload: 'info',
+        payload: 'confirm',
       });
     }
   };
@@ -57,7 +57,7 @@ const Step2: React.FC<Step2Props> = props => {
       // });
       dispatch({
         type: 'stepForm1/saveCurrentStep',
-        payload: 'js',
+        payload: 'result',
       });
     }
   };
@@ -113,7 +113,7 @@ const Step2: React.FC<Step2Props> = props => {
         <Button type="primary" onClick={onValidateForm} style={{marginLeft:10}}>
             下一步
           </Button>
-    </div> </div>
+     </div></div>
   );
 };
 export default connect(
@@ -129,4 +129,4 @@ export default connect(
     submitting: loading.effects['stepForm1/submitStepForm'],
     data: stepForm1.step,
   }),
-)(Form.create<Step2Props>()(Step2));
+)(Form.create<Step2Props>()(Step4));

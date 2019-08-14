@@ -27,28 +27,24 @@ const Step3: React.FC<Step3Props> = props => {
   const information = (
     <div className={styles.information}>
       <Descriptions column={1}>
-        <Descriptions.Item label="付款账户"> {payAccount}</Descriptions.Item>
-        <Descriptions.Item label="收款账户"> {receiverAccount}</Descriptions.Item>
-        <Descriptions.Item label="收款人姓名"> {receiverName}</Descriptions.Item>
-        <Descriptions.Item label="转账金额">
-          <Statistic value={amount} suffix="元" />
-        </Descriptions.Item>
+        <Descriptions.Item label="付款账户"> 3NPXVjoYy1jd4Y2Bzt6akamGpmpiu8NQSU</Descriptions.Item>
+        <Descriptions.Item label="收款账户"> 3LZWRarCJSKh47JSM1FT7zMjgdmJp9pYQw</Descriptions.Item>
       </Descriptions>
     </div>
   );
   const extra = (
     <>
       <Button type="primary" onClick={onFinish}>
-        再转一笔
+        创建新订单
       </Button>
-      <Button>查看账单</Button>
+      <Button>查看详情</Button>
     </>
   );
   return (
     <Result
       status="success"
       title="操作成功"
-      subTitle="预计两小时内到账"
+      subTitle="等待商户确认"
       extra={extra}
       className={styles.result}
     >

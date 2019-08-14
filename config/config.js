@@ -93,11 +93,11 @@ export default {
           component: './data_statistics_1',
           icon: 'smile',
         },
-        {
-          name: '个人信息',
-          path: '/dashboard/workplace',
-          component: './dashboard/workplace',
-        },
+        // {
+        //   name: '个人信息',
+        //   path: '/dashboard/workplace',
+        //   component: './dashboard/workplace',
+        // },
         {
           name: '个人中心',
           path: '/account/center',

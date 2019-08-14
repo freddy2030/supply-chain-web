@@ -1,4 +1,4 @@
-import { Button, Divider, Form, Input, Select } from 'antd';
+import { Button, Divider, Form, Input, Select,  Card, Typography,List,Icon} from 'antd';
 import React, { Fragment } from 'react';
 
 import { Dispatch } from 'redux';
@@ -6,9 +6,12 @@ import { FormComponentProps } from 'antd/es/form';
 import { connect } from 'dva';
 import { StateType } from '../../model';
 import styles from './index.less';
+import { CardListItemDataType } from '../../../list/card-list/data';
+import styles1 from './style.less';
 
+const { Paragraph } = Typography;
 const { Option } = Select;
-
+const a = true;
 const formItemLayout = {
   labelCol: {
     span: 5,
@@ -21,6 +24,48 @@ interface Step1Props extends FormComponentProps {
   data?: StateType['step'];
   dispatch?: Dispatch<any>;
 }
+
+const c = ( <div className={styles.cardList}>
+<List<Partial<CardListItemDataType>>
+  rowKey="id"
+  // loading={null}
+  grid={{ gutter: 24, lg: 3, md: 2, sm: 1, xs: 1 }}
+  dataSource={[{description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。",id: "fake-list-1", owner: "曲丽丽", title: "Angular", avatar: "https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png", cover: "https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png"},
+  {description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标",id: "fake-list-2", owner: "林东东", title: "Ant Design", avatar: "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png", cover: "https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png"},
+  {description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。",id: "fake-list-2", owner: "林东东", title: "Ant Design", avatar: "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png", cover: "https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png"}, 
+]}
+  renderItem={item => {
+    if (item && item.id) {
+      return (
+        <List.Item key={item.id}>
+          <Card
+            hoverable
+            className={styles1.card}
+            actions={[]}
+          >
+            <Card.Meta
+              avatar={<img alt="" className={styles1.cardAvatar} src={item.avatar} />}
+              title={<a>{item.title}</a>}
+              description={
+                <Paragraph className={styles1.item} ellipsis={{ rows: 3 }}>
+                  {item.description}
+                </Paragraph>
+              }
+            />
+          </Card>
+        </List.Item>
+      );
+    }
+    return (
+      <List.Item>
+        <Button type="dashed" className={styles1.newButton}>
+          <Icon type="plus" /> 新增产品
+        </Button>
+      </List.Item>
+    );
+  }}
+/>
+</div>)
 
 const Step1: React.FC<Step1Props> = props => {
   const { form, dispatch, data } = props;
@@ -43,79 +88,13 @@ const Step1: React.FC<Step1Props> = props => {
     });
   };
   return (
-    <Fragment>
-      <Form layout="horizontal" className={styles.stepForm} hideRequiredMark>
-        <Form.Item {...formItemLayout} label="付款账户">
-          {getFieldDecorator('payAccount', {
-            initialValue: data.payAccount,
-            rules: [{ required: true, message: '请选择付款账户' }],
-          })(
-            <Select placeholder="test@example.com">
-              <Option value="ant-design@alipay.com">ant-design@alipay.com</Option>
-            </Select>,
-          )}
-        </Form.Item>
-        <Form.Item {...formItemLayout} label="收款账户">
-          <Input.Group compact>
-            <Select defaultValue="alipay" style={{ width: 100 }}>
-              <Option value="alipay">支付宝</Option>
-              <Option value="bank">银行账户</Option>
-            </Select>
-            {getFieldDecorator('receiverAccount', {
-              initialValue: data.receiverAccount,
-              rules: [
-                { required: true, message: '请输入收款人账户' },
-                { type: 'email', message: '账户名应为邮箱格式' },
-              ],
-            })(<Input style={{ width: 'calc(100% - 100px)' }} placeholder="test@example.com" />)}
-          </Input.Group>
-        </Form.Item>
-        <Form.Item {...formItemLayout} label="收款人姓名">
-          {getFieldDecorator('receiverName', {
-            initialValue: data.receiverName,
-            rules: [{ required: true, message: '请输入收款人姓名' }],
-          })(<Input placeholder="请输入收款人姓名" />)}
-        </Form.Item>
-        <Form.Item {...formItemLayout} label="转账金额">
-          {getFieldDecorator('amount', {
-            initialValue: data.amount,
-            rules: [
-              { required: true, message: '请输入转账金额' },
-              {
-                pattern: /^(\d+)((?:\.\d+)?)$/,
-                message: '请输入合法金额数字',
-              },
-            ],
-          })(<Input prefix="￥" placeholder="请输入金额" />)}
-        </Form.Item>
-        <Form.Item
-          wrapperCol={{
-            xs: { span: 24, offset: 0 },
-            sm: {
-              span: formItemLayout.wrapperCol.span,
-              offset: formItemLayout.labelCol.span,
-            },
-          }}
-          label=""
-        >
-          <Button type="primary" onClick={onValidateForm}>
+    <div>
+      {c}
+ <div style={{textAlign:"center"}}>
+    <Button type="primary" onClick={onValidateForm}>
             下一步
           </Button>
-        </Form.Item>
-      </Form>
-      <Divider style={{ margin: '40px 0 24px' }} />
-      <div className={styles.desc}>
-        <h3>说明</h3>
-        <h4>转账到支付宝账户</h4>
-        <p>
-          如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
-        </p>
-        <h4>转账到银行卡</h4>
-        <p>
-          如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
-        </p>
-      </div>
-    </Fragment>
+        </div>  </div>
   );
 };
 

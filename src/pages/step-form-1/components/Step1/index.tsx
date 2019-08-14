@@ -30,8 +30,8 @@ const c = ( <div className={styles.cardList}>
   rowKey="id"
   // loading={null}
   grid={{ gutter: 24, lg: 3, md: 2, sm: 1, xs: 1 }}
-  dataSource={[{description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。",id: "fake-list-1", owner: "曲丽丽", title: "Angular", avatar: "https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png", cover: "https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png"},
-  {description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标",id: "fake-list-2", owner: "林东东", title: "Ant Design", avatar: "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png", cover: "https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png"},
+  dataSource={[{description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。",id: "fake-list-1", owner: "曲丽丽", title: "Angular", avatar: "https://images.pexels.com/photos/2333857/pexels-photo-2333857.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", cover: "https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png"},
+  {description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标",id: "fake-list-2", owner: "林东东", title: "Ant Design", avatar: "https://images.pexels.com/photos/2767343/pexels-photo-2767343.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", cover: "https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png"},
   {description: "在中台产品的研发过程中，会出现不同的设计规范和实现方式，但其中往往存在很多类似的页面和组件，这些类似的组件会被抽离成一套标准规范。",id: "fake-list-2", owner: "林东东", title: "Ant Design", avatar: "https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png", cover: "https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png"}, 
 ]}
   renderItem={item => {

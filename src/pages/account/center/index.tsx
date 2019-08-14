@@ -157,6 +157,7 @@ class Center extends PureComponent<
     const { newTags, inputVisible, inputValue, tabKey } = this.state;
     const { currentUser, currentUserLoading } = this.props;
     const dataLoading = currentUserLoading || !(currentUser && Object.keys(currentUser).length);
+    console.log("@160", currentUser, currentUserLoading)
     return (
       
             <Card bordered={false} style={{ marginBottom: 24,alignContent: "center"}} loading={dataLoading}>

@@ -58,22 +58,12 @@ class CardList extends Component<
     const content = (
       <div className={styles.pageHeaderContent}>
         <p>
-          段落示意：蚂蚁金服务设计平台 ant.design，用最小的工作量，无缝接入蚂蚁金服生态，
-          提供跨越设计与开发的体验解决方案。
+          这里有所有人的订单
         </p>
         <div className={styles.contentLink}>
-          <a>
-            <img alt="" src="https://gw.alipayobjects.com/zos/rmsportal/MjEImQtenlyueSmVEfUD.svg" />{' '}
-            快速开始
-          </a>
-          <a>
-            <img alt="" src="https://gw.alipayobjects.com/zos/rmsportal/NbuDUAuBlIApFuDvWiND.svg" />{' '}
-            产品简介
-          </a>
-          <a>
-            <img alt="" src="https://gw.alipayobjects.com/zos/rmsportal/ohOEPSYdDTNnyMbGuyLb.svg" />{' '}
-            产品文档
-          </a>
+          <Button style={{textAlign:"center", height:25, marginTop:10}}><p style={{textAlign:"center", marginTop:0}}>金属</p></Button>
+          <Button style={{textAlign:"center", height:25, marginTop:10, marginLeft:20}}><p style={{textAlign:"center", marginTop:0}}>医疗用品</p></Button>
+          <Button style={{textAlign:"center", height:25, marginTop:10, marginLeft:20}}><p style={{textAlign:"center", marginTop:0}}>美容化妆</p></Button>
         </div>
       </div>
     );
@@ -102,15 +92,20 @@ class CardList extends Component<
                     <Card
                       hoverable
                       className={styles.card}
-                      actions={[<a key="option1">操作一</a>, <a key="option2">操作二</a>]}
+                      actions={[]}
                     >
                       <Card.Meta
                         avatar={<img alt="" className={styles.cardAvatar} src={item.avatar} />}
                         title={<a>{item.title}</a>}
                         description={
-                          <Paragraph className={styles.item} ellipsis={{ rows: 3 }}>
+                          <div>
+                          <Paragraph className={styles.item} ellipsis={{ rows: 1 }}>
                             {item.description}
                           </Paragraph>
+                          <Paragraph className={styles.item} ellipsis={{ rows: 1}}>
+                           订单金额： 1232300
+                        </Paragraph>
+                        </div>
                         }
                       />
                     </Card>
@@ -120,7 +115,7 @@ class CardList extends Component<
               return (
                 <List.Item>
                   <Button type="dashed" className={styles.newButton}>
-                    <Icon type="plus" /> 新增产品
+                    <Icon type="plus" /> 新建订单
                   </Button>
                 </List.Item>
               );
